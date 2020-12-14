@@ -119,3 +119,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#укажем где будут храниться медиа файлы:
+
+#в корне нашего проекта мы создадим папку static
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#должна быть ссылка на наше медиа - по этому адресу
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #создаем директорию media
+
+#добавим переменную - это те дирректории где django будет искать какие то статические файлы для дальнейшего перемещения
+#в STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIR = (
+    os.path.join(BASE_DIR, 'static_dev')
+)
